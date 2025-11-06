@@ -1,0 +1,39 @@
+// Función que formatea un saludo personalizado
+function formatearSaludo(persona, horaDelDia) {
+  let tratamiento = persona.edad >= 18 ? "Sr./Sra." : "";
+  let mensajeHora = "";
+  
+  if (horaDelDia === "mañana") {
+    mensajeHora = "Buenos días";
+  } else if (horaDelDia === "tarde") {
+    mensajeHora = "Buenas tardes";
+  } else if (horaDelDia === "noche") {
+    mensajeHora = "Buenas noches";
+  }
+  
+  if (persona.edad >= 18) {
+    return `${mensajeHora}, ${tratamiento} ${persona.nombre}. Es un placer saludarle.`;
+  } else {
+    return `${mensajeHora}, ${persona.nombre}. ¿Cómo estás?`;
+  }
+}
+
+// Función para calcular el área de un círculo
+function calcularArea(radio) {
+  const PI = 3.14159;
+  let area = PI * radio * radio;
+  return area;
+}
+
+// Pruebas de las funciones
+let persona1 = { nombre: "Carlos", edad: 25 };
+let persona2 = { nombre: "Ana", edad: 16 };
+
+console.log(formatearSaludo(persona1, "mañana"));
+console.log(formatearSaludo(persona2, "tarde"));
+console.log(formatearSaludo(persona1, "noche"));
+
+console.log("\nÁrea de círculos:");
+console.log("Radio 5:", calcularArea(5));
+console.log("Radio 10:", calcularArea(10));
+console.log("Radio 3.5:", calcularArea(3.5));
